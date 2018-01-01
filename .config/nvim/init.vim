@@ -18,6 +18,8 @@ if dein#load_state('/home/mahesh/.config/nvim')
 
 	" Custom plugins
 	call dein#add('Shougo/deoplete.nvim')
+	call dein#add('itchyny/lightline.vim')
+	call dein#add('zchee/deoplete-clang')
 
 	" Required:
 	call dein#end()
@@ -76,9 +78,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-"=============================================================================
+"==============================================================================
 " Key mappings
-"=============================================================================
+"==============================================================================
 
 " Map key for highlight 'removal'
 nnoremap <CR> :noh<CR><CR>
@@ -102,3 +104,11 @@ map <F12> :w !sudo tee % <CR>
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 
+" Disable deoplete default prompts (rely solely on plugins)
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources._ = ['buffer', 'around']
+
+" Setup deoplete-clang
+let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+let g:deoplete#sources#clang#sort_algo = 'priority'
