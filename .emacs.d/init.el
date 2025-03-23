@@ -37,7 +37,10 @@
 
 ;; pdf-tools allows for viewing PDFs in emacs itself
 (use-package pdf-tools
-   :ensure t
-   :config
-   (pdf-tools-install))
+  :ensure t
+  :config
+  (pdf-tools-install))
 
+;; magit for git integration
+(use-package magit
+  :ensure t)
