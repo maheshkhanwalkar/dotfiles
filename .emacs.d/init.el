@@ -27,6 +27,8 @@
  )
 
 ;; Enable company for auto-complete
+(use-package company
+  :ensure t)
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; Use K&R C style, since it's the best
